@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo" width="100" height="100">
+</p>
+
 # GitHub Repository Transfer Script
 
 A Python utility script to list and manage GitHub repositories, particularly for transferring repositories between personal accounts and organizations.
@@ -7,6 +11,21 @@ A Python utility script to list and manage GitHub repositories, particularly for
 - List all repositories owned by a GitHub user
 - Display repository details including name, visibility, and description
 - Transfer single repository or bulk repositories to an organization
+
+## How It Works
+
+```mermaid
+flowchart TD
+    A[User Authentication] -->|GitHub Token| B[List Repositories]
+    B --> C{Transfer Type}
+    C -->|Single| D[Select Single Repository]
+    C -->|Bulk| E[Collect All Repositories]
+    D --> F[Transfer to Organization]
+    E --> F
+    F --> G[Verify Transfer Success]
+    G -->|Success| H[Repository in New Location]
+    G -->|Failure| I[Error Handling]
+```
 
 ## Prerequisites
 
